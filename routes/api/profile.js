@@ -151,4 +151,23 @@ router.delete('/', async (req, res) => {
     }
 });
 
+// @route   PUT api/profile/experience
+// @desc    Add profile experience
+// @access  private
+router.put('/experience', [auth, [
+    check('title', 'Title is required')
+    .not()
+    .isEmpty(),
+    check('Company', 'Company is required')
+    .not()
+    .isEmpty(),
+    check('from', 'From date is required')
+    .not()
+    .isEmpty(),
+    
+    
+]], async (req, res) => {
+    
+})
+
 module.exports = router;
