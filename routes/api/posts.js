@@ -11,4 +11,8 @@ router.get('/all', (req, res) => {
     res.json({posts: "all_posts"});
 });
 
+
+router.delete('/post', (req,res) => {
+    res.json({post: "post_id"});
+});
 module.exports = router;
