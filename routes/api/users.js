@@ -84,4 +84,8 @@ router.post('/',
     
 });
 
+router.get("/", (req, res) => {
+    res.json({users: "users"});
+});
+
 module.exports = router;
