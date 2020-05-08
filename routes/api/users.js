@@ -88,4 +88,10 @@ router.get("/", (req, res) => {
     res.json({users: "users"});
 });
 
+
+router.delete("/", (req, res) => {
+    res.json({users: "Deleting User"});
+});
+
+
 module.exports = router;
