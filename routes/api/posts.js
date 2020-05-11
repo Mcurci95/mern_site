@@ -1,18 +1,29 @@
 const express = require('express');
 const router = express.Router();
 
-// @route   GET api/posts
-// @desc    Test route 
-// @access  Public
-router.get('/', (req, res) => res.send('Posts route'));
+const { check, validationResult } = require("express-validator/check");
+const auth = require("../../middleware/auth");
 
+const Post = require("../../models/Post");
+const Profile = require("../../models/Profile");
+const User = require("../../models/User");
 
-router.get('/all', (req, res) => {
-    res.json({posts: "all_posts"});
-});
+router.post("/", [ auth, [
+    check('text', 'Text is required.').not().isEmpty()
+    ]
+],
+async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+    }
 
+    const user = await User.findById(req.user.id).select('-password');
 
-router.delete('/post', (req,res) => {
-    res.json({post: "post_id"});
-});
+    const newPost = {
+        text
+    }
+}
+)
+
 module.exports = router;
