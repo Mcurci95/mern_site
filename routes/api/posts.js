@@ -32,4 +32,8 @@ async (req, res) => {
     }
 )
 
+router.get("/", (req, res) => {
+    res.json({posts: "posts"});
+});
+
 module.exports = router;
