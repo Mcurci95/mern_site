@@ -30,10 +30,14 @@ async (req, res) => {
     const user = await User.findById(req.user.id).select('-password');
 
     }
-)
+);
 
 router.get("/", (req, res) => {
     res.json({posts: "posts"});
 });
 
+
+router.get("/:postid", (req, res) => {
+    res.json({post: "Posts from " + req.params.postid});
+} )
 module.exports = router;
