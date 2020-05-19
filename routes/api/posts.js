@@ -38,6 +38,9 @@ router.get("/", (req, res) => {
 
 
 router.get("/:postid", (req, res) => {
-    res.json({post: "Posts from " + req.params.postid});
-} )
+    const post = req.params.postid;
+    res.json({post: "Posts from " + post});
+} );
+
+
 module.exports = router;
