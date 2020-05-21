@@ -33,7 +33,9 @@ async (req, res) => {
 );
 
 router.get("/", (req, res) => {
-    res.json({posts: "posts"});
+    // Grab every post
+    const posts = [];
+    res.json({posts: posts});
 });
 
 
