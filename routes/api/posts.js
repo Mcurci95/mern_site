@@ -45,13 +45,4 @@ router.get("/:postid", (req, res) => {
 } );
 
 
-router.post("/", (req, res) => {
-    res.json({posts: "posts"});
-
-});
-
-
-router.post("/:postid", (req, res) => {
-    res.json({user_post: "user Post"})
-})
 module.exports = router;
