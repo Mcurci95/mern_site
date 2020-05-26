@@ -327,6 +327,7 @@ router.get('/github/:username', (req, res) => {
         });
     } catch (error) {
         console.error(error);
+        res.json({msg: "Error"});
     }
 })
 
