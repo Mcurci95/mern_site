@@ -329,6 +329,8 @@ router.get('/github/:username', (req, res) => {
         console.error(error);
         res.json({msg: "Error"});
     }
-})
+});
+
+
 
 module.exports = router;
