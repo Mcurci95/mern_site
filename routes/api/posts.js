@@ -45,4 +45,8 @@ router.get("/:postid", (req, res) => {
 } );
 
 
+router.delete("/:postid", (req,res) => {
+    
+})
+
 module.exports = router;
