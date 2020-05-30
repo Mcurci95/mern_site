@@ -46,7 +46,7 @@ router.get("/:postid", (req, res) => {
 
 
 router.delete("/:postid", (req,res) => {
-    
+    res.json({msg: `Deleted post ID: ${req.params.postid}`});
 })
 
 module.exports = router;
